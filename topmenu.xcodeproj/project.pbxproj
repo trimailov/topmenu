@@ -27,6 +27,20 @@
 			remoteGlobalIDString = 4C543D1C1A08396700C5D9B2;
 			remoteInfo = SystemKit;
 		};
+		6EACD7551BCC2B6300F81478 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E8351581BCABA6500697571 /* SystemKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C543D271A08396700C5D9B2;
+			remoteInfo = SystemKitTests;
+		};
+		6EACD7571BCC2B6300F81478 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E8351581BCABA6500697571 /* SystemKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C4BE6071A083A690085170A;
+			remoteInfo = Example;
+		};
 		6EECF20D1BC99881001D9C94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6EECF1F51BC99880001D9C94 /* Project object */;
@@ -144,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				6E83516D1BCABA6500697571 /* SystemKit.framework */,
+				6EACD7561BCC2B6300F81478 /* SystemKitTests.xctest */,
+				6EACD7581BCC2B6300F81478 /* Example */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,6 +292,7 @@
 				TargetAttributes = {
 					6EECF1FC1BC99880001D9C94 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = UV2HGM9HR9;
 					};
 					6EECF20B1BC99881001D9C94 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -319,6 +336,20 @@
 			fileType = wrapper.framework;
 			path = SystemKit.framework;
 			remoteRef = 6E83516C1BCABA6500697571 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6EACD7561BCC2B6300F81478 /* SystemKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SystemKitTests.xctest;
+			remoteRef = 6EACD7551BCC2B6300F81478 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6EACD7581BCC2B6300F81478 /* Example */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Example;
+			remoteRef = 6EACD7571BCC2B6300F81478 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -490,11 +521,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = topmenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.topmenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -502,11 +536,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = topmenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.topmenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
