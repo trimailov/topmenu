@@ -17,18 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     // Insert code here to initialize your application
-    let button = statusItem.button
-    button!.title = "text"
-    
-    let menu = NSMenu()
-    menu.addItem(NSMenuItem(title: "Quit Quotes", action: Selector("terminate:"), keyEquivalent: "q"))
-    statusItem.menu = menu
-    
-    var sys = System()
-    let cpuUsage = sys.usageCPU()
-    
-    let realCpuUse = Int(cpuUsage.system) + Int(cpuUsage.user)
-    button!.title = "\(realCpuUse) %"
+    let view = MenuView(statusItem: statusItem)
+    view.run()
   }
 
   func applicationWillTerminate(aNotification: NSNotification) {
