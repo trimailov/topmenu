@@ -19,12 +19,15 @@ class MenuView: NSObject {
     self.button = statusItem.button!
 
     let menu = NSMenu()
-    menu.addItem(NSMenuItem(title: "Quit Quotes", action: Selector("terminate:"), keyEquivalent: "q"))
+    menu.addItem(NSMenuItem(title: "About topmenu", action: Selector("orderFrontStandardAboutPanel:") , keyEquivalent: ""))
+    menu.addItem(NSMenuItem.separatorItem())
+    menu.addItem(NSMenuItem(title: "Quit topmenu", action: Selector("terminate:"), keyEquivalent: "q"))
     statusItem.menu = menu
   }
+  
 
   func run() {
-    let _ = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "checkCpu", userInfo: nil, repeats: true)
+    let _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "checkCpu", userInfo: nil, repeats: true)
   }
 
   func checkCpu() {
