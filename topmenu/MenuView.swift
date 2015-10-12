@@ -34,4 +34,29 @@ class MenuView: NSObject {
     self.button.title = String(format: "%.2f %%", comboUsage)
   }
 
+  func drawMenuImage() {
+    let path: NSBezierPath = NSBezierPath()
+    path.moveToPoint(NSPoint(x: 0, y: 15))
+    path.lineToPoint(NSPoint(x: 10, y: 15))
+    path.lineToPoint(NSPoint(x: 10, y: 25))
+    path.lineToPoint(NSPoint(x: 20, y: 25))
+    path.lineToPoint(NSPoint(x: 20, y: 35))
+    path.lineToPoint(NSPoint(x: 30, y: 35))
+    path.lineToPoint(NSPoint(x: 30, y: 0))
+
+    let fillColor = NSColor(red: 0.5, green: 0.0, blue: 0.5, alpha: 1.0)
+    fillColor.set()
+    path.fill()
+    path.lineWidth = 5
+    path.stroke()
+
+    path.closePath()
+
+    let img: NSImage = NSImage(size: NSSize(width: 50, height: 50))
+    img.lockFocus()
+    path.fill()
+    img.unlockFocus()
+
+    self.button.image = img
+  }
 }
