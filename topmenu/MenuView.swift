@@ -24,15 +24,13 @@ class MenuView: NSObject {
   }
 
   func run() {
-    let _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "checkCpu", userInfo: nil, repeats: true)
+    let _ = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "checkCpu", userInfo: nil, repeats: true)
   }
 
   func checkCpu() {
     let cpuUsage = sys.usageCPU()
-    print(cpuUsage)
 
     let comboUsage = cpuUsage.system + cpuUsage.user
-//    self.button.title = String(format: "%.2f %%", comboUsage)
     history_queue.enqueue(comboUsage)
     self.drawMenuImage()
   }
@@ -40,22 +38,32 @@ class MenuView: NSObject {
   func drawMenuImage() {
     let path: NSBezierPath = NSBezierPath()
 
-    path.moveToPoint(NSPoint(x: history_queue.length - history_queue.items.count + 1, y: 0))
+    path.moveToPoint(NSPoint(x: history_queue.length - history_queue.items.count + 1, y: 1))
 
     for (index, value) in history_queue.items.enumerate() {
       let x_coordinate = history_queue.length - history_queue.items.count + 1 + index
-      let normalized_value: Int = Int(value / 5)
-      print(x_coordinate, normalized_value)
+      // normalize value to the height of menu image height. 100 - are percent, 20 - menu image height in pixels
+      let normalized_value: Int = Int(value / (100 / 18)) + 1
       path.lineToPoint(NSPoint(x: x_coordinate, y: normalized_value))
     }
     path.lineToPoint(NSPoint(x: 20, y: 0))
     path.closePath()
+    
+    let background: NSBezierPath = NSBezierPath(rect: NSRect(x: 0, y: 0, width: 20, height: 20))
+    let bgColor = NSColor(red: 0, green: 0, blue: 0, alpha: 0.1)
 
     let img: NSImage = NSImage(size: NSSize(width: 20, height: 20))
     // set as template, so switching to/from dark mode would work
     img.template = true
     img.lockFocus()
     path.fill()
+    
+    background.lineWidth = 2.0
+    background.stroke()
+    
+    bgColor.set()
+    background.fill()
+    
     img.unlockFocus()
 
     self.button.image = img
