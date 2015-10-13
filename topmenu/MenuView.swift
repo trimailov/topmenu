@@ -53,19 +53,15 @@ class MenuView: NSObject {
     path.closePath()
     
     let background: NSBezierPath = NSBezierPath(rect: NSRect(x: 0, y: 0, width: 20, height: 20))
-    let bgColor = NSColor(red: 0, green: 0, blue: 0, alpha: 0.1)
 
     let img: NSImage = NSImage(size: NSSize(width: 20, height: 20))
-    // set as template, so switching to/from dark mode would work
+    // set image as template, so switching to/from dark mode would work
     img.template = true
     img.lockFocus()
     path.fill()
     
     background.lineWidth = 2.0
     background.stroke()
-    
-    bgColor.set()
-    background.fill()
     
     img.unlockFocus()
 
