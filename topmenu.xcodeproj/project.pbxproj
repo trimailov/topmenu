@@ -7,19 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E334D131BCB93B400538D6D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E334D121BCB93B400538D6D /* MenuView.swift */; settings = {ASSET_TAGS = (); }; };
+		6E0B09841BCE791800C53A1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EECF2001BC99880001D9C94 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		6E0B09851BCE791B00C53A1C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E334D121BCB93B400538D6D /* MenuView.swift */; settings = {ASSET_TAGS = (); }; };
 		6E5675221BCBB38300057B0E /* StatsHistoryQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5675211BCBB38300057B0E /* StatsHistoryQueue.swift */; settings = {ASSET_TAGS = (); }; };
 		6E8351621BCABA6500697571 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8351521BCABA6500697571 /* Battery.swift */; settings = {ASSET_TAGS = (); }; };
 		6E8351641BCABA6500697571 /* IOReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8351541BCABA6500697571 /* IOReturn.swift */; settings = {ASSET_TAGS = (); }; };
 		6E8351651BCABA6500697571 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8351551BCABA6500697571 /* Process.swift */; settings = {ASSET_TAGS = (); }; };
 		6E8351661BCABA6500697571 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8351561BCABA6500697571 /* System.swift */; settings = {ASSET_TAGS = (); }; };
 		6E8351781BCABEB100697571 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EECF2041BC99881001D9C94 /* MainMenu.xib */; };
-		6EECF2011BC99880001D9C94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EECF2001BC99880001D9C94 /* AppDelegate.swift */; };
 		6EECF2111BC99881001D9C94 /* topmenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EECF2101BC99881001D9C94 /* topmenuTests.swift */; };
 		6EECF21C1BC99881001D9C94 /* topmenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EECF21B1BC99881001D9C94 /* topmenuUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6E04C68C1BCE8ECC00163324 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E8351581BCABA6500697571 /* SystemKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C543D1B1A08396700C5D9B2;
+			remoteInfo = SystemKit;
+		};
 		6E83516C1BCABA6500697571 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6E8351581BCABA6500697571 /* SystemKit.xcodeproj */;
@@ -239,6 +246,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6E04C68D1BCE8ECC00163324 /* PBXTargetDependency */,
 			);
 			name = topmenu;
 			productName = topmenu;
@@ -384,10 +392,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E0B09851BCE791B00C53A1C /* MenuView.swift in Sources */,
+				6E0B09841BCE791800C53A1C /* AppDelegate.swift in Sources */,
 				6E8351661BCABA6500697571 /* System.swift in Sources */,
-				6E334D131BCB93B400538D6D /* MenuView.swift in Sources */,
 				6E8351641BCABA6500697571 /* IOReturn.swift in Sources */,
-				6EECF2011BC99880001D9C94 /* AppDelegate.swift in Sources */,
 				6E5675221BCBB38300057B0E /* StatsHistoryQueue.swift in Sources */,
 				6E8351621BCABA6500697571 /* Battery.swift in Sources */,
 				6E8351651BCABA6500697571 /* Process.swift in Sources */,
@@ -413,6 +421,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6E04C68D1BCE8ECC00163324 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SystemKit;
+			targetProxy = 6E04C68C1BCE8ECC00163324 /* PBXContainerItemProxy */;
+		};
 		6EECF20E1BC99881001D9C94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6EECF1FC1BC99880001D9C94 /* topmenu */;
