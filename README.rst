@@ -1,6 +1,8 @@
 topmenu
 =======
 
+.. image:: img/topmenu.png
+
 OS X menu bar app to show recent CPU usage history, like ``MenuMeters.app`` or ``iStat Menus.app``
 
 - Simple
